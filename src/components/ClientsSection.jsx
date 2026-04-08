@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useLanguage } from '../../contexts/LanguageContext';
-import { translations } from '../../utils/translations';
+import { useLanguage } from '../LanguageContext';
+import { translations } from '../translations';
 
 const clientLogos = [
   "https://i.ibb.co/N2cT3MHy/39.webp",
@@ -89,3 +89,8 @@ export default function ClientsSection() {
     </section>
   );
 }
+
+
+
+
+

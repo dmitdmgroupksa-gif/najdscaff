@@ -3,9 +3,9 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { base44 } from "@/api/base44Client";
+import { apiClient as base44 } from "@/apiClient";
 import { Download, Loader2 } from "lucide-react";
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../LanguageContext';
 
 export default function CatalogueModal({ isOpen, onClose }) {
   const { language } = useLanguage();
@@ -149,3 +149,7 @@ export default function CatalogueModal({ isOpen, onClose }) {
     </Dialog>
   );
 }
+
+
+
+

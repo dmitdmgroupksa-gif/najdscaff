@@ -9,9 +9,9 @@ import {
   X,
   Download
 } from 'lucide-react';
-import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
+import { LanguageProvider, useLanguage } from './LanguageContext';
 import { HelmetProvider } from 'react-helmet-async';
-import { translations } from './utils/translations';
+import { translations } from './translations';
 
 
 const LayoutContent = ({ children }) => {
@@ -281,3 +281,6 @@ export default function Layout({ children }) {
     </LanguageProvider>
   );
 }
+
+
+

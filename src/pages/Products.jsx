@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ProductGrid from '../components/ProductGrid';
 import Footer from '../components/Footer';
-import SEO from '../utils/SEO';
+import SEO from '../SEO';
 import { JsonLd } from 'react-schemaorg';
-import { useLanguage } from '../contexts/LanguageContext';
-import { translations } from '../utils/translations';
+import { useLanguage } from '../LanguageContext';
+import { translations } from '../translations';
 
 export default function Products() {
   const { language } = useLanguage();
@@ -78,3 +78,6 @@ export default function Products() {
     </article>
   );
 }
+
+
+

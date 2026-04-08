@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from './LanguageContext';
 import { translations } from './translations';
 import { JsonLd } from 'react-schemaorg';
 
@@ -86,3 +86,6 @@ export default function SEO({ title, description, keywords, image, type = 'websi
     </>
   );
 }
+
+
+

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Loader2, Download } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
-import { useLanguage } from '../contexts/LanguageContext';
-import { translations } from '../utils/translations';
+import { apiClient as base44 } from '@/apiClient';
+import { useLanguage } from '../LanguageContext';
+import { translations } from '../translations';
 import Footer from '../components/Footer';
-import SEO from '../utils/SEO';
+import SEO from '../SEO';
 import { JsonLd } from 'react-schemaorg';
 import CatalogueModal from '../components/CatalogueModal';
 
@@ -34,42 +34,42 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
-    try {
-      await base44.entities.Inquiry.create({
-        ...formData,
-        status: 'new'
-      });
-
-      // Send email notifications
-      const emailBody = `
+      try {
+        await base44.post('/inquiries', {
+          ...formData,
+          status: 'new'
+        });
+        
+        // Send email notifications
+        const emailBody = `
 New Inquiry Received from Website
-
+ 
 Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone}
 Subject: ${formData.subject}
-
+ 
 Message:
 ${formData.message}
 `;
+        
+        try {
+          await Promise.all([
+            base44.post('/email/send', {
+              to: 'dmit.dmgroupksa@gmail.com',
+              subject: `New Inquiry: ${formData.subject}`,
+              body: emailBody
+            }),
+            base44.post('/email/send', {
+              to: 'sales@najdscaff.com',
+              subject: `New Inquiry: ${formData.subject}`,
+              body: emailBody
+            })
+          ]);
+        } catch (emailError) {
+          console.error('Failed to send email notifications:', emailError);
+        }
 
-      try {
-        await Promise.all([
-          base44.integrations.Core.SendEmail({
-            to: 'dmit.dmgroupksa@gmail.com',
-            subject: `New Inquiry: ${formData.subject}`,
-            body: emailBody
-          }),
-          base44.integrations.Core.SendEmail({
-            to: 'sales@najdscaff.com',
-            subject: `New Inquiry: ${formData.subject}`,
-            body: emailBody
-          })
-        ]);
-      } catch (emailError) {
-        console.error('Failed to send email notifications:', emailError);
-        // Continue to success even if email fails, as the inquiry is saved
-      }
 
       setStatus('success');
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
@@ -318,3 +318,7 @@ ${formData.message}
     </article>
   );
 }
+
+
+
+

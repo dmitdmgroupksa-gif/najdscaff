@@ -3,10 +3,10 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Target, Eye, Layout as LayoutIcon, Star, ShieldCheck, Handshake, Heart } from 'lucide-react';
 import ClientsSection from '../components/ClientsSection';
 import Footer from '../components/Footer';
-import SEO from '../utils/SEO';
+import SEO from '../SEO';
 import { JsonLd } from 'react-schemaorg';
-import { useLanguage } from '../contexts/LanguageContext';
-import { translations } from '../utils/translations';
+import { useLanguage } from '../LanguageContext';
+import { translations } from '../translations';
 
 export default function About() {
   const { language, t } = useLanguage();
@@ -412,3 +412,6 @@ export default function About() {
     </article>
   );
 }
+
+
+

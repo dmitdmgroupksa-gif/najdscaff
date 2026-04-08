@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Building2, Fuel, Factory, Construction } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../LanguageContext';
 
 export default function IndustriesSection() {
   const { language } = useLanguage();
@@ -134,3 +134,6 @@ export default function IndustriesSection() {
     </section>
   );
 }
+
+
+

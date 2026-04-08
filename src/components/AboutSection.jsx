@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from '../../utils';
-import { useLanguage } from '../../contexts/LanguageContext';
-import { translations } from '../../utils/translations';
+import { createPageUrl } from '../utils';
+import { useLanguage } from '../LanguageContext';
+import { translations } from '../translations';
 
 export default function AboutSection() {
   const { language } = useLanguage();
@@ -136,3 +136,8 @@ export default function AboutSection() {
     </section>
   );
 }
+
+
+
+
+

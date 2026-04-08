@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
-import { translations } from '../utils/translations';
+import { useLanguage } from '../LanguageContext';
+import { translations } from '../translations';
 
 const news = [
   {
@@ -120,3 +120,6 @@ export default function NewsCards() {
     </section>
   );
 }
+
+
+

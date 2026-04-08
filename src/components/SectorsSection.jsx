@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ShoppingCart, Factory, Truck } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
-import { translations } from '../utils/translations';
+import { useLanguage } from '../LanguageContext';
+import { translations } from '../translations';
 
 export default function ServicesSection() {
   const { language } = useLanguage();
@@ -151,3 +151,6 @@ export default function ServicesSection() {
     </section>
   );
 }
+
+
+

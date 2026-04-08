@@ -264,3 +264,6 @@ export const translations = {
     subtitle: { en: 'Leading companies across the Kingdom', ar: 'الشركات الرائدة في جميع أنحاء المملكة' }
   }
 };
+
+
+

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Zap, Users, MapPin } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../LanguageContext';
 
 const features = [
   {
@@ -54,3 +54,6 @@ export default function FeaturesBar() {
     </section>
   );
 }
+
+
+

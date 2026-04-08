@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { base44 } from '@/api/base44Client';
+import { apiClient as base44 } from '@/apiClient';
 import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { Lock, LayoutDashboard, MessageSquare, Download, LogOut } from 'lucide-react';
@@ -26,13 +26,13 @@ export default function Admin() {
 
   const { data: inquiries, isLoading: inquiriesLoading } = useQuery({
     queryKey: ['inquiries'],
-    queryFn: () => base44.entities.Inquiry.list('-created_date'),
+    queryFn: () => base44.get('/inquiries', { params: { sort: '-created_date' } }),
     enabled: isAuthenticated,
   });
-
+ 
   const { data: downloads, isLoading: downloadsLoading } = useQuery({
     queryKey: ['catalogue_downloads'],
-    queryFn: () => base44.entities.CatalogueDownload.list('-created_date'),
+    queryFn: () => base44.get('/catalogue-downloads', { params: { sort: '-created_date' } }),
     enabled: isAuthenticated,
   });
 
@@ -156,3 +156,7 @@ export default function Admin() {
     </div>
   );
 }
+
+
+
+

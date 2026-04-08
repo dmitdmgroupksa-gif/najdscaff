@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { base44 } from '@/api/base44Client';
+import { apiClient as base44 } from '@/apiClient';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { Search, Trash2, Mail, Phone, Calendar, MessageSquare } from 'lucide-react';
 import { format } from 'date-fns';
@@ -9,12 +9,12 @@ export default function InquiriesTable({ inquiries }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const updateStatusMutation = useMutation({
-    mutationFn: ({ id, status }) => base44.entities.Inquiry.update(id, { status }),
+    mutationFn: ({ id, status }) => base44.put(`/inquiries/${id}`, { status }),
     onSuccess: () => queryClient.invalidateQueries(['inquiries']),
   });
-
+ 
   const deleteInquiryMutation = useMutation({
-    mutationFn: (id) => base44.entities.Inquiry.delete(id),
+    mutationFn: (id) => base44.delete(`/inquiries/${id}`),
     onSuccess: () => queryClient.invalidateQueries(['inquiries']),
   });
 
@@ -129,3 +129,7 @@ export default function InquiriesTable({ inquiries }) {
     </div>
   );
 }
+
+
+
+

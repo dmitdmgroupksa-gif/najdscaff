@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Pause, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from '../../utils';
-import { useLanguage } from '../contexts/LanguageContext';
-import { translations } from '../utils/translations';
+import { createPageUrl } from '../utils';
+import { useLanguage } from '../LanguageContext';
+import { translations } from '../translations';
 
 export default function HeroSlider() {
   const { language } = useLanguage();
@@ -211,3 +211,7 @@ export default function HeroSlider() {
     </section>
   );
 }
+
+
+
+

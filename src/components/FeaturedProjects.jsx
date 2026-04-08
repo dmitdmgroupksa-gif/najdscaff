@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
-import { useLanguage } from '../contexts/LanguageContext';
-import { translations } from '../utils/translations';
+import { useLanguage } from '../LanguageContext';
+import { translations } from '../translations';
 
 // Import products from ProductGrid
 const cuplockProducts = [
@@ -163,3 +163,6 @@ export default function FeaturedProducts() {
     </section>
   );
 }
+
+
+

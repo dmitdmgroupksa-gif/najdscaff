@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { useLanguage } from '../contexts/LanguageContext';
-import { translations } from '../utils/translations';
+import { useLanguage } from '../LanguageContext';
+import { translations } from '../translations';
 import { FolderCheck, Award, ShieldCheck, Headphones } from 'lucide-react';
 
 function AnimatedCounter({ value, prefix = '', suffix = '', duration = 2000, inView }) {
@@ -96,3 +96,6 @@ export default function StatsSection() {
     </section>
   );
 }
+
+
+

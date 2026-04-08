@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../LanguageContext';
 import Footer from '../components/Footer';
-import SEO from '../utils/SEO';
+import SEO from '../SEO';
 import { JsonLd } from 'react-schemaorg';
 
 export default function Projects() {
@@ -107,3 +107,6 @@ export default function Projects() {
     </div>
   );
 }
+
+
+

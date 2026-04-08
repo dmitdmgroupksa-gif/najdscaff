@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { services as base44 } from '@/api/services';
-import { appParams } from '@/lib/app-params';
-import { apiClient } from '@/api/apiClient';
+import { apiClient as base44 } from '@/apiClient';
+import { appParams } from '@/appParams';
+import { apiClient } from '@/apiClient';
 
 const AuthContext = createContext();
 
@@ -149,3 +149,7 @@ export const useAuth = () => {
   }
   return context;
 };
+
+
+
+

@@ -1,16 +1,16 @@
 import React, { Suspense, lazy } from 'react';
-import SEO from '../utils/SEO';
+import SEO from '../SEO';
 import { JsonLd } from 'react-schemaorg';
 import HeroSlider from '../components/HeroSlider';
 
 const FeaturesBar = lazy(() => import('../components/FeaturesBar'));
-const AboutSection = lazy(() => import('../components/about/AboutSection'));
+const AboutSection = lazy(() => import('../components/AboutSection'));
 const SectorsSection = lazy(() => import('../components/SectorsSection'));
 const FeaturedProjects = lazy(() => import('../components/FeaturedProjects'));
 const StatsSection = lazy(() => import('../components/StatsSection'));
 const IndustriesSection = lazy(() => import('../components/IndustriesSection'));
 const FAQSection = lazy(() => import('../components/FAQSection'));
-const ClientsSection = lazy(() => import('../components/about/ClientsSection'));
+const ClientsSection = lazy(() => import('../components/ClientsSection'));
 const Footer = lazy(() => import('../components/Footer'));
 
 const SectionFallback = () => (
@@ -71,3 +71,7 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+

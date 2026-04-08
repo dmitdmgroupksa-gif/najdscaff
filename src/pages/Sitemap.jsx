@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
-import { useLanguage } from '../contexts/LanguageContext';
-import { translations } from '../utils/translations';
-import SEO from '../utils/SEO';
+import { useLanguage } from '../LanguageContext';
+import { translations } from '../translations';
+import SEO from '../SEO';
 import Footer from '../components/Footer';
 
 export default function Sitemap() {
@@ -110,3 +110,6 @@ export default function Sitemap() {
     </div>
   );
 }
+
+
+

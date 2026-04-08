@@ -9,9 +9,9 @@ import {
   Shield
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from '../../utils';
-import { useLanguage } from '../contexts/LanguageContext';
-import { translations } from '../utils/translations';
+import { createPageUrl } from '../utils';
+import { useLanguage } from '../LanguageContext';
+import { translations } from '../translations';
 
 const socialLinks = [
   { icon: Instagram, href: 'https://www.instagram.com/najdscaff/', label: 'Instagram' },
@@ -229,3 +229,7 @@ export default function Footer({ hideCTA = false }) {
     </footer>
   );
 }
+
+
+
+

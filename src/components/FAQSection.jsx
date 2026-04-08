@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../LanguageContext';
 
 export default function FAQSection() {
   const { language } = useLanguage();
@@ -162,3 +162,6 @@ export default function FAQSection() {
     </section>
   );
 }
+
+
+
