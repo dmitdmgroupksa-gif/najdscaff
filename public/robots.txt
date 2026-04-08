@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://najdscaff.com/sitemap.xml
